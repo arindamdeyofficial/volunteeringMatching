@@ -1,0 +1,91 @@
+Angular application about volunteering. responsive application also supports mobile view and app view for android and ios
+Pages and features:
+1. Landing Page:
+Website builder link top left corner
+Theme icon, Notification bell icon, Login, Registration, Feedback top right corner
+Theme icon changes whole website theme toggle into white and dark background
+Featured Sponsors carousel and "Become a Sponsor" button mid section of the page
+After that Subscription Plans view (it has a separate component which it shows. Below details of subscription section)
+Then Featured Exhibition
+left bottom corner Forum Link
+right bottom corner one chatbot floating icon. on clicking it opens a chatbot right side
+Footer has Legal, Privacy Policies, GDPR Compliance link
+
+2. Legal Terms and Condition page with static content
+3. Privacy Policies page with static content having content including anti scraping and data sharing
+4. GDPR Compliance page with static content
+5. Become a sponsor: 
+Featured success story of several companies and individual sponsors
+Then 2 sections - Sponsor our existing events (on clicking below section shows one dropdown of events and one dropdown of Exhibition and one button to "Show Interest". on showing interest a backend call goes and from backend c# code it triggers an email notification to "SponsorAdmin" group and issues a signalR notification to all users of that group)
+6. Notification:
+This component shows all the notifications of last 7 days. control to delete individual notification and delete all link. And this notifications will be link to corresponding pages
+7. Azure Ad login on clicking Login link
+8. Registration:
+Name, Email, PhoneNumber, Location, Comment
+Submit button will place a backend call and eventually saves a entry in DB and notification email and notification goes to RegAdmin group users. And also one email to the new user. Design along with email content
+9. Feedback:
+Rating with 5 starts clickable
+Comment
+Event Dropdown only visible if coming from Event Details page
+Submit click will trigger notification with email and Notification to FeedbackAdmin group and in case of Event selected owner of the Event
+10. Subscription Plan:
+first section Product Plan - Vertical sections with 3 plans and their features
+second section Help & Support Plan - Vertical sections with 3 plans and their features
+Subscribe click will show payment page and on success return refresh the page content with current subscription plan details and one upgrade button
+11. Payment page
+Input from source page the amount
+integrate Razorpay UI and service
+on successful Payment this component closes and redirects to Subscription component with success status
+12. Approval Status:
+Status of all approval requests by the user for last 30 days
+13. Approval Requests:
+Approval notifications from all users may be for Event registration or new user registration whatever received from SignalR and written into db from other pages
+14. Help & Support / Contact Us:
+Along with email, phonenumber, Request Form with textarea
+Ticket creation form with event dropdown
+Plan upgrade link
+15. Survey:
+List of all survey created having fields Surveyname, link, user email selection box, event dropdown, a option to select event owner or user, send button
+send button will trigger a email and notification to all email or in case event selection all event users
+Create, edit, delete
+Create will open a page with question textbox and option to answer as clickable 5 stars or multiple choice answer checkbox or yes no radiobox. On clicking create it will have aentry in db and come back to survey list.
+16. Admin Analytics Dashboard:
+Realtime Analytics graphs
+Simulation options
+17. Marketing tools:
+Email Campaign, Lead campaign, Sponsors ,Auto Lead Scan tabs
+Email Campaign shows list of all email campaign created with fields Name, datetime, message builder overlay with design options, Emaillist link with edit option, send, delete
+Lead campaign shows list of all Lead campaign created with fields Name, datetime, message builder overlay with design options, Emaillist link with edit option, send, delete
+Sponsors campaign shows list of all Sponsors campaign created with fields Name, datetime, message builder overlay with design options, Emaillist link with edit option, send, delete
+Auto Lead Scan shows list of all Lead Scans with fields Name, datetime, email addr list. These entries are created by the system itself which scans leads in whole web and creates a campaign for them
+18. User Management:
+Admin User Approval
+On clicking notification or approval requests if it's about user approval this page will open or from normal routing
+User List with fields Name, Email, phone, Isactive
+Create User Hierarchy and assign, Create Group and assign, Assign role like Exhibitor, BasicUser, Admin, Vip,Sponsor
+Submit button will update user fileds in db and sends a notification email to the user with login username, password, login link
+19. Event / Exhibition Management:
+List of Event list with fileds like name, details, image
+Create Event Hierarchy and assign
+Create Group and assign
+Fill up event details
+Create
+20. Questions:
+List of all questions with fields question, type, isactive,edit,publish toggle
+21. Journey: a chatbased page where chat will asks questions from admin set question of type userprofile and also asks any gap in any information throughout the pages wherever any information needed from user this page will open
+22 Sponsor Management:
+List of all Sponsors with fields Name, Email, Isindividual toggle, Event or exhibition sponsored, active inactive toggle
+Add button add a new row
+23 Dashboard:
+Profile section in content in 3 sections 
+first section with fileds user details Name, Rank, Earth Points, journey completion, email, mobile,location
+second section with badge and recent activites along with earned points for profile completion, opportunity enrollment, etc.
+Below this it will show enrolled opportunities
+third section with leaderboard rank
+left side menu opportunity, journey, Help & Support, Event Management (for admin), Marketing Mgmt (for admin), Analytics  (for admin), Survey
+clicking each link will open corrosponding page 
+right top corner willhave user pic icon. on clikcing it will show option Profile, Approval status, Approval Requests, subscription, Logout
+24 Event Details:
+Details, Enroll Status for user not for owner, Team name, Owner info, Notify All Enrolled for Owner, Google map location link (opens google map in new tab), Session video live when event live, Session videos link after stream with youtube player embeded, Event Survey link opens survey page with all survey for that event along with link, Event Feedback opens feedback page, Event attendance or checkin status for user or checked in user for owner, Live chat for users of that event, Shopable videos youtube link
+25. Masterdata entry pages for Event, Category with fresh,Add New, Edit
+

@@ -1,0 +1,111 @@
+@import './variables';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+button {
+  padding: 10px 24px;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.container {
+  max-width: $max-width;
+  margin: auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #0070f3;
+}
+
+.logo-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #0070f3;
+  font-weight: 500;
+}
+
+[data-theme="light"] {
+  --bg: #fff;
+  --text: #000;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #fff;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  color: inherit; // Ensures it inherits the text color (light/dark)
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
+

@@ -1,0 +1,90 @@
+.footer {
+  background-color: #ffffff;
+  color: #0a0a0a;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+html[data-theme='dark'] .footer {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 20px 0 10px 0;
+}
+
+.footerLinks li a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+html[data-theme='dark'] .footerLinks li a {
+  color: #e0e0e0;
+}
+
+.footerLinks li a:hover {
+  text-decoration: underline;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.socialIcons a {
+  font-size: 20px;
+  color: #000000;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+html[data-theme='dark'] .socialIcons a {
+  color: #e0e0e0;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.2);
+}
+
+.footerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #666;
+  font-size: 13px;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+html[data-theme='dark'] .footerText {
+  color: #aaa;
+}
+
+.footerText span {
+  white-space: nowrap;
+}
+
+.separator {
+  color: #999;
+}
+
+.highlight {
+  color: #0070f3;
+  font-weight: 600;
+}

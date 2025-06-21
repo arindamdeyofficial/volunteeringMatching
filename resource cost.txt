@@ -1,0 +1,110 @@
+SQL:
+=====
+basic 417 1-50 user 1300 serverless 50-100 user
+general purpose: 41052 50-500 users yearly 30282 db size 50 gb vcore 2
+premium: 50 gb db 38548 rupees 500-1000
+Enterprise Nagarro cloud billing: 1000> billing 54 gb max 55012 rupees serverless
+custom with more storage:
+
+blob storage: 3 dollar/month
+===============
+Each of your 500 users uploads 100 MB of data, totaling ~50 GB
+You use the Hot tier (frequent access)
+You use Locally Redundant Storage (LRS)
+Access is via read-heavy workloads, 10 reads/user/day
+
+Storage (50 GB):
+$0.0184 per GB/month →
+50 × 0.0184 = $0.92/month
+
+Read Operations
+10,000 reads/day × 30 = 300,000 reads/month
+
+Hot Tier read cost:
+~$0.004 per 10,000 reads (LRS)
+
+300,000 / 10,000 × 0.004 = $0.12/month
+
+Data Egress (Download outside Azure)
+Assume:
+
+Each read returns 100 KB average
+
+10,000 reads/day × 100 KB = 1 GB/day
+
+30 days = ~30 GB egress
+
+Egress	Cost Estimate
+First 5 GB/month	Free
+Next 25 GB	25 × $0.087/GB = $2.18
+
+Item	Cost (USD)
+Storage (50 GB)	$0.92
+Read Ops (300k/month)	$0.12
+Egress (30 GB)	~$2.18
+Total	~$3.22/month
+
+app service plan:
+shared cloud -  
+Basic B1 971 rupees 1-50 user
+Basic B2 1941 50-200 users
+Basic B3 3882 200-1000 user
+Premium v3 P1V3 8840.873 1000> users
+
+AKS:
+====
+3 nodes of Standard_D2s_v3 (2 vCPU, 8 GB RAM)
+Linux OS
+730 hours/month (full month uptime)
+Standard_D2s_v3 = ~$0.096/hour
+→ 0.096 × 730 × 3 = ~$210/month
+Feature	Cost Estimate (USD/month)
+3× D2s_v3 nodes	~$210
+Load Balancer (basic)	~$18
+100 GB managed disks	~$6–$8
+50 GB egress	~$4.35
+Total	~$240–260/month 22000 rupees/ month
+
+Application Insights (Basic Plan) 100 rupees
+
+shared Cloud:
+==============
+
+sole cost:
+SQL:
+4.9$ 1-100 users
+14.6$ 100-500 users
+73$ 500-1000 users
+146$ 1000-10000 users
+647$ user>10000
+
+shared: [will be divided among user, as user increases it decreases]
+app service plan: 
+Basic B1 12$ 1-50 user
+Basic B2 23$ 50-200 users
+Basic B3 47$ 200-1000 user
+Premium v3 P1V3 105$ 1000> users
+
+Storage: 4$ max
+API Gateway: 60$
+Sendgrid and others : 3$
+
+Total: 
+
+Enterprise Nagarro cloud:
+SQL + app service plan + Storage + AKS 260$ = 
+
+Enterprise: Quote based
+
+	1-50 user	50-200 users	200-500 users	500-1000 users	1000-10000 users	users>10000
+SQL	$4.90	$14.60	$14.60	$73.00	$146.00	$647.00
+App Service Plan	$12.00	$23.00	$47.00	$47.00	$105.00	$0.00
+Storage	$0.00	$0.00	$1.00	$4.00	$4.00	$20.00
+Azure Application Gateway	$0.00	$0.00	$60.00	$60.00	$0.00	$0.00
+Others	$4.00	$4.00	$4.00	$4.00	$10.00	$20.00
+AKS	$0.00	$0.00	$0.00	$0.00	$260.00	$260.00
+						
+Enterprise Nagarro cloud	$20.90	$41.60	$126.60	$188.00	$525.00	$947.00
+Shared Cloud 2 clients	$12.90	$28.10	$70.60	$130.50	$335.50	$797.00
+Shared Cloud 3 clients	$10.23	$23.60	$51.93	$111.33	$272.33	$747.00
+

@@ -1,0 +1,41 @@
+@import './variables';
+
+@media (max-width: 768px) {
+  header, footer {
+    padding: 1rem;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .subscriptions, .sponsors, .exhibitions {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero {
+    padding: 4rem 2rem;
+  }
+
+  .subscriptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
