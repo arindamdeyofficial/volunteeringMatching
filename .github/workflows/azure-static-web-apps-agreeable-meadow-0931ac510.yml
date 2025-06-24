@@ -14,6 +14,7 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -27,11 +28,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./volunteeringMatching/volunteering-app
+        working-directory: volunteering-app
 
       - name: Build Next.js app
         run: npm run build
-        working-directory: ./volunteeringMatching/volunteering-app
+        working-directory: volunteering-app
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
@@ -40,10 +41,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_MEADOW_0931AC510 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "volunteering-app"                # where your app source code is
-          output_location: "volunteering-app/.next"       # where built output is
-          app_build_command: "npm run build"              # <- needed to trigger build from root of app
-          api_location: ""                                # optional if you don't have Azure Functions
+          app_location: "volunteering-app"
+          output_location: "volunteering-app/.next"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
