@@ -1,0 +1,77 @@
+.joinUsContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  background: var(--background, #fff);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.inputGroup input[type="text"],
+.inputGroup input[type="email"],
+.inputGroup input[type="tel"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.genderOptions {
+  display: flex;
+  gap: 20px;
+}
+
+.genderOptions label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.submitBtn {
+  padding: 10px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: #005bb5;
+}
+
+.signInText {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signInLink {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signInLink:hover {
+  text-decoration: underline;
+}

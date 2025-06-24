@@ -14,8 +14,8 @@ const HomePage = () => {
           <button>Website Builder</button>
           <button>Toggle Theme</button>
           <NotificationBell />
-          <button>Login</button>
-          <button>Register</button>
+          <Link href="/auth/login">Login</Link>
+          <Link href="/join-us">Register</Link>
         </div>
       </section>
 

@@ -43,7 +43,7 @@ const Header = () => {
             </Link>
           </li>
           <li><Link href="/auth/login">Login</Link></li>
-          <li><Link href="/auth/register">Register</Link></li>
+          <li><Link href="/join-us">Register</Link></li>
         </ul>
       </nav>
     </header>

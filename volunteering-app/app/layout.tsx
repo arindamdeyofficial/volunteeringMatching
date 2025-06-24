@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes';
 import AuthProvider from "../components/providers/AuthProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Sidebar from '../components/Sidebar';
 
 export const metadata = {
   title: 'Volunteering App',
@@ -20,12 +21,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="h-screen">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <AuthProvider>
-            <Header />
-            <main className="container">{children}</main>
-            <Footer />
+            <div className="flex h-screen">
+              <Sidebar />
+              <div className="flex flex-col flex-1">
+                <Header />
+                <main className="flex-1 overflow-y-auto p-4 bg-gray-100 dark:bg-[#121212] text-gray-900 dark:text-white">
+                  {children}
+                </main>
+                <Footer />
+              </div>
+            </div>
           </AuthProvider>
         </ThemeProvider>
       </body>

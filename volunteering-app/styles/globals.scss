@@ -7,7 +7,16 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: var(--bg);
   color: var(--text);
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 
 a {
   color: $primary-color;
@@ -107,5 +116,8 @@ button {
   }
 }
 
-
-
+#__next {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
