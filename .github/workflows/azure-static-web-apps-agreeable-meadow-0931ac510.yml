@@ -27,11 +27,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: volunteering-app
+        working-directory: ./volunteeringMatching/volunteering-app
 
       - name: Build Next.js app
         run: npm run build
-        working-directory: volunteering-app
+        working-directory: ./volunteeringMatching/volunteering-app
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
