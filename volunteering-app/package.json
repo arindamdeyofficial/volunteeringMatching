@@ -21,6 +21,7 @@
   "dependencies": {
     "@azure/msal-browser": "^4.13.2",
     "@azure/msal-react": "^3.0.13",
+    "@microsoft/signalr": "^8.0.7",
     "axios": "^1.6.8",
     "chart.js": "^4.5.0",
     "classnames": "^2.5.1",
