@@ -21,18 +21,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="h-screen">
+      <body className="min-h-screen bg-white dark:bg-black">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <AuthProvider>
-            <div className="flex h-screen">
-              <Sidebar />
-              <div className="flex flex-col flex-1">
-                <Header />
+            <div className="flex flex-col h-screen">
+              <Header />
+              <div className="flex flex-1 overflow-hidden">
+                <Sidebar />
                 <main className="flex-1 overflow-y-auto p-4 bg-gray-100 dark:bg-[#121212] text-gray-900 dark:text-white">
                   {children}
                 </main>
-                <Footer />
               </div>
+              <Footer />
             </div>
           </AuthProvider>
         </ThemeProvider>

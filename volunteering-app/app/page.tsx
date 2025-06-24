@@ -12,10 +12,6 @@ const HomePage = () => {
         <p>Join us in making a difference!</p>
         <div className="actions">
           <button>Website Builder</button>
-          <button>Toggle Theme</button>
-          <NotificationBell />
-          <Link href="/auth/login">Login</Link>
-          <Link href="/join-us">Register</Link>
         </div>
       </section>
 
