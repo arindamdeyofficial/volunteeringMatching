@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import PlanCard from './PlanCard';
 import { SubscriptionPlan } from './types';
+import { useRouter } from 'next/navigation';
+
 
 const productPlans: SubscriptionPlan[] = [
   {
@@ -54,11 +56,12 @@ const supportPlans: SubscriptionPlan[] = [
 
 export default function SubscriptionPage() {
   const [activePlanId, setActivePlanId] = useState<string | null>(null);
-
+  const router = useRouter();
   const handleSubscribe = (plan: SubscriptionPlan) => {
-    // TODO: integrate Razorpay or backend call here
-    alert(`Subscribed to ${plan.name}!`);
     setActivePlanId(plan.id);
+    // Extract numeric amount from price string (e.g., "₹199 / month")
+    const amount = parseInt(plan.price.replace(/[^\d]/g, ''), 10);
+    router.push(`/payment?amount=${amount}&plan=${encodeURIComponent(plan.id)}`);
   };
 
   return (
