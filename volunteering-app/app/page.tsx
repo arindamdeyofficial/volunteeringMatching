@@ -17,7 +17,9 @@ const HomePage = () => {
           <button>Website Builder</button>
         </div>
       </section>
-
+      <section className="feedback">
+        <Link href="/feedback" className="feedback">Share Feedback</Link>
+      </section>
       <section className="sponsors">
           <FeaturedSponsors />
       </section>
