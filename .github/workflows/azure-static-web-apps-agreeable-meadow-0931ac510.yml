@@ -26,12 +26,14 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
-        working-directory: volunteering-app
+        run: |
+          cd volunteering-app
+          npm install
 
       - name: Build Next.js app
-        run: npm run build
-        working-directory: volunteering-app
+        run: |
+          cd volunteering-app
+          npm run build
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
