@@ -19,7 +19,7 @@ const Register = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         // Handle registration logic here (e.g., API call)
         console.log('Registration data submitted:', formData);
