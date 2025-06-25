@@ -8,6 +8,7 @@ import AuthProvider from "../components/providers/AuthProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from '../components/Sidebar';
+import ChatbotOverlay from '@/components/chatbot/ChatbotOverlay';
 
 export const metadata = {
   title: 'Volunteering App',
@@ -34,8 +35,9 @@ export default function RootLayout({
               </div>
               <Footer />
             </div>
+            <ChatbotOverlay />
           </AuthProvider>
-        </ThemeProvider>
+        </ThemeProvider>        
       </body>
     </html>
   );

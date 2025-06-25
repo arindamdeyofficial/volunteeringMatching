@@ -1,7 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import Razorpay from 'razorpay';
-
 const Payment = () => {
     const handlePayment = async () => {
         const options = {
@@ -11,7 +9,7 @@ const Payment = () => {
             name: 'Volunteering App',
             description: 'Payment for Subscription',
             image: '/public/favicon.ico', // Your logo
-            handler: function (response) {
+            handler: function (response: { razorpay_payment_id: any; }) {
                 alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
                 // Redirect to success page or handle success
             },
@@ -28,7 +26,8 @@ const Payment = () => {
             }
         };
 
-        const razorpay = new Razorpay(options);
+        // @ts-ignore
+        const razorpay = new (window as any).Razorpay(options);
         razorpay.open();
     };
 

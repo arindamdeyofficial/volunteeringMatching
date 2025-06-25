@@ -3,6 +3,9 @@
 import React from 'react';
 import NotificationBell from '../components/NotificationBell';
 import Link from 'next/link';
+import FeaturedSponsors from '@/components/Sponsors/FeaturedSponsors';
+import SubscriptionPage from './subscription/page';
+import FeaturedExhibitions from '@/components/Exhibition/FeaturedExhibitions';
 
 const HomePage = () => {
   return (
@@ -14,31 +17,26 @@ const HomePage = () => {
           <button>Website Builder</button>
         </div>
       </section>
-
+      <section className="feedback">
+        <Link href="/feedback" className="feedback">Share Feedback</Link>
+      </section>
       <section className="sponsors">
-        <h2>Featured Sponsors</h2>
-        {/* Carousel component for featured sponsors */}
-        <Link href="/sponsorship">Become a Sponsor</Link>
+          <FeaturedSponsors />
       </section>
 
       <section className="subscriptions">
-        <h2>Subscription Plans</h2>
-        {/* List of subscription plans */}
+        <SubscriptionPage/>
       </section>
 
       <section className="exhibitions">
-        <h2>Featured Exhibitions</h2>
-        {/* List of featured exhibitions */}
+        <FeaturedExhibitions />
       </section>
 
       <section className="forum">
-        <h2>Join Our Forum</h2>
-        <button>Visit Forum</button>
-      </section>
-
-      <section className="chatbot">
-        <h2>Need Help?</h2>
-        <button>Chat with Us</button>
+        <Link href="/forum" className="forum-link">
+          <h2>Visit Forum</h2>
+          <p>Connect with other volunteers and share your experiences.</p>
+        </Link>
       </section>
     </>
   );
